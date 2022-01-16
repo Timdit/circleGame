@@ -55,17 +55,19 @@ function createRandomCircle() {
     const circle = document.createElement('div')
 
     circle.classList.add('circle')
+    
+    let random = randomNumber(10, 60);
 
-    circle.style = `
-        width: 30px;
-        height: 30px;
-    `
+    circle.style.width = `${random}px`;
+    circle.style.height = `${random}px`;
+
 
     circle.style.top = `${randomNumber(0, 450)}px`;
     circle.style.right = `${randomNumber(0, 450)}px`;
     circle.style.background = randColor();
 
     board.appendChild(circle);
+    
 }
 
 
@@ -85,5 +87,5 @@ function randColor() {
     let r = Math.floor(Math.random() * 256),
         g = Math.floor(Math.random() * 256),
         b = Math.floor(Math.random() * 256);
-        return '#' + r.toString(16) + g.toString(16) + b.toString(16);
+    return '#' + r.toString(16) + g.toString(16) + b.toString(16);
 }
